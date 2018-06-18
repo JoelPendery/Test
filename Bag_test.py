@@ -67,7 +67,19 @@ class MagicBag():
                 self.inventory[item] -= 1   # reduce the number of that item by one
         else:
             print "You don't have that item bro"    # if the item is not in the bag, you can't remove it
-                
+      
+class WeirdBag():
+    def __init__(self):
+        self.inventory = []
+        self.numOfItems = len(self.inventory)
+        
+    def add(self, item):
+        if item in self.inventory:
+            print "Already have one of those items"
+        else:
+            (self.inventory).extend([item])
+            print "You saved that item"
+          
 #    def remove(self, item, num):
 #        if item in self.inventory:
 #            if self.inventory[item] == 1:

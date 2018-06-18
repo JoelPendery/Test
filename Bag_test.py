@@ -94,7 +94,9 @@ class WeirdBag():
             print "You saved that item"
             
     def remove(self, item):
-        if item is self.inventory:
+        print item
+        item 
+        if item in self.inventory:
             # remove item
             (self.inventory).remove(item)
         else:
@@ -154,19 +156,19 @@ class Watch():
 #a.add(Watch())
 #a.remove("vest")
 #print a.inventory
-
-
-b = MagicBag(3) # creates a magic bag with 3 slots for items
+        
+b = WeirdBag()
 # adds 5 of the following items: spears, potions and vests
+# only one item of each will be added in the weird bag
 for ii in range(5):
     b.add("Spears") 
     b.add("Potions")
     b.add("Vest")
     
-b.add("Helmet") # tries to add a helmet but can't because it would be 4 items
-b.add("Spears") # adds another spear (can do this because there is already a spear there)
+b.add("Helmet") # add a helmet to the bag because there is not a helmet in there already
+b.add("Spears") # can't add another spear to the bag because one is already in there
     
-print b.inventory   # print the inventory of the magic bag
+print b.inventory   # print the inventory of the weird bag
 
 for ii in range(2):     # remove 2 of the following items from the bag: spears, potions
     b.remove("Spears")
@@ -174,3 +176,23 @@ for ii in range(2):     # remove 2 of the following items from the bag: spears, 
     
 b.remove("Potions") # remove another potion from the bag
 print b.inventory   # check the inventory again. we should have 5 vests, 3 spears and 2 potions and no helmets
+
+
+#b = MagicBag(3) # creates a magic bag with 3 slots for items
+# adds 5 of the following items: spears, potions and vests
+#for ii in range(5):
+#    b.add("Spears") 
+#    b.add("Potions")
+#    b.add("Vest")
+#    
+#b.add("Helmet") # tries to add a helmet but can't because it would be 4 items
+#b.add("Spears") # adds another spear (can do this because there is already a spear there)
+#    
+#print b.inventory   # print the inventory of the magic bag
+#
+#for ii in range(2):     # remove 2 of the following items from the bag: spears, potions
+#    b.remove("Spears")
+#    b.remove("Potions")
+#    
+#b.remove("Potions") # remove another potion from the bag
+#print b.inventory   # check the inventory again. we should have 5 vests, 3 spears and 2 potions and no helmets

@@ -67,7 +67,7 @@ class MagicBag():
                 self.inventory[item] -= 1   # reduce the number of that item by one
         else:
             print "You don't have that item bro"    # if the item is not in the bag, you can't remove it
-                
+  
 #    def remove(self, item, num):
 #        if item in self.inventory:
 #            if self.inventory[item] == 1:
@@ -79,6 +79,29 @@ class MagicBag():
     def size(self):
         return(len(self.inventory)) # lets player know how many items they can carry
         
+    
+class WeirdBag():
+    def __init__(self):
+        self.inventory = []
+        self.numOfItems = len(self.inventory)
+        
+    def add(self, item):
+        if item in self.inventory:
+            print "Already have one of those items"
+        else:
+            (self.inventory).extend([item])
+            self.numOfItems = len(self.inventory)
+            print "You saved that item"
+            
+    def remove(self, item):
+        print item
+        item 
+        if item in self.inventory:
+            # remove item
+            (self.inventory).remove(item)
+        else:
+            print "You don't have that item"
+          
         
 # a helmet object
 class Helmet():
@@ -133,19 +156,19 @@ class Watch():
 #a.add(Watch())
 #a.remove("vest")
 #print a.inventory
-
-
-b = MagicBag(3) # creates a magic bag with 3 slots for items
+        
+b = WeirdBag()
 # adds 5 of the following items: spears, potions and vests
+# only one item of each will be added in the weird bag
 for ii in range(5):
     b.add("Spears") 
     b.add("Potions")
     b.add("Vest")
     
-b.add("Helmet") # tries to add a helmet but can't because it would be 4 items
-b.add("Spears") # adds another spear (can do this because there is already a spear there)
+b.add("Helmet") # add a helmet to the bag because there is not a helmet in there already
+b.add("Spears") # can't add another spear to the bag because one is already in there
     
-print b.inventory   # print the inventory of the magic bag
+print b.inventory   # print the inventory of the weird bag
 
 for ii in range(2):     # remove 2 of the following items from the bag: spears, potions
     b.remove("Spears")
@@ -153,3 +176,23 @@ for ii in range(2):     # remove 2 of the following items from the bag: spears, 
     
 b.remove("Potions") # remove another potion from the bag
 print b.inventory   # check the inventory again. we should have 5 vests, 3 spears and 2 potions and no helmets
+
+
+#b = MagicBag(3) # creates a magic bag with 3 slots for items
+# adds 5 of the following items: spears, potions and vests
+#for ii in range(5):
+#    b.add("Spears") 
+#    b.add("Potions")
+#    b.add("Vest")
+#    
+#b.add("Helmet") # tries to add a helmet but can't because it would be 4 items
+#b.add("Spears") # adds another spear (can do this because there is already a spear there)
+#    
+#print b.inventory   # print the inventory of the magic bag
+#
+#for ii in range(2):     # remove 2 of the following items from the bag: spears, potions
+#    b.remove("Spears")
+#    b.remove("Potions")
+#    
+#b.remove("Potions") # remove another potion from the bag
+#print b.inventory   # check the inventory again. we should have 5 vests, 3 spears and 2 potions and no helmets
